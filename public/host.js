@@ -255,13 +255,13 @@ function renderPhasePanel(s) {
   }
   if (s.state === 'won') {
     p.innerHTML = `
-      <div style="font-size:3rem;font-weight:900;color:#2e7d32;">\uD83C\uDF89 YOU WON! \uD83C\uDF89</div>
+      <div style="font-size:3rem;font-weight:900;">\uD83C\uDF89 YOU WON! \uD83C\uDF89</div>
       <p class="help-line">The boat safely reached the shore. Press PLAY AGAIN for another trip.</p>`;
     return;
   }
   if (s.state === 'lost') {
     p.innerHTML = `
-      <div style="font-size:2rem;font-weight:900;color:#c62828;">The boat sank... \uD83D\uDEA4</div>
+      <div style="font-size:2rem;font-weight:900;">The boat sank... \uD83D\uDEA4</div>
       <p class="help-line">Don't worry - press PLAY AGAIN to try once more.</p>`;
   }
 }

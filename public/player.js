@@ -105,17 +105,11 @@ function renderAction(s) {
     const wrap = document.createElement('div');
     wrap.className = 'two-buttons';
 
-    const left = makeSteerBtn('left',  '\u2B05\uFE0F LEFT');
-    const right = makeSteerBtn('right', 'RIGHT \u27A1\uFE0F');
+    const left = makeSteerBtn('left',  '\u2B05\uFE0F');
+    const right = makeSteerBtn('right', '\u27A1\uFE0F');
     wrap.appendChild(left);
     wrap.appendChild(right);
     els.actionArea.appendChild(wrap);
-
-    const hint = document.createElement('p');
-    hint.className = 'help-line';
-    hint.style.fontSize = '1.2rem';
-    hint.textContent = 'Look at the big screen to see which way to steer.';
-    els.actionArea.appendChild(hint);
     return;
   }
 
@@ -154,8 +148,7 @@ function renderMini(s) {
     els.miniStatus.textContent = `Rowing: ${s.rowingProgress}/${s.rowingNeeded} sailors ready`;
   } else if (s.state === 'steering' && s.obstacle) {
     const counts = s.obstacle.voteCounts;
-    els.miniStatus.textContent =
-      `Votes - Left: ${counts.left}  Right: ${counts.right}  (need ${s.obstacle.voteNeeded})`;
+    els.miniStatus.textContent = `Left: ${counts.left}  Right: ${counts.right}  (need ${s.obstacle.voteNeeded}) — check the big screen!`;
   } else {
     els.miniStatus.textContent = '';
   }
